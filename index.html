@@ -30,8 +30,8 @@
       src="https://kit.fontawesome.com/c866fd140b.js"
       crossorigin="anonymous"
     ></script>
+    <script src="js/vars.js"></script>
     <script src="js/app.js"></script>
-    <script src="js/store.everything.min.js"></script>
     <link rel="stylesheet" href="custom.css" />
   </head>
   <script src="js/carrito.js"></script>
@@ -90,7 +90,11 @@
             </div>
             <div class="col">
               <a href="#">
-                <button type="button" class="btn btn-outline-success btn-sm">
+                <button
+                  type="button"
+                  class="btn btn-outline-success btn-sm"
+                  id="ver-carrito"
+                >
                   Ver Carrito
                 </button>
               </a>
@@ -252,94 +256,100 @@
             <div class="border" id="info-extend"></div>
             <!-- END - INFORMACION EXPANDIDA -->
             <!-- FULL CARRITO -->
-            <!-- NAV Carrito LG -->
-            <div class="container-fluid mt-2 d-none d-sm-none d-lg-block">
-              <nav class="navbar navbar-expand-lg navbar-light carrito-navbar">
-                <a class="navbar-brand"><strong>Carrito</strong></a>
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                  <li class="nav-item border rounded-lg border-dark">
-                    <a class="nav-link">Elejir Colores y Cantidad</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link"
-                      ><i class="fas fa-angle-double-right"></i
-                    ></a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link disabled">Confirmar</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link"
-                      ><i class="fas fa-angle-double-right"></i
-                    ></a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link disabled">Pagar</a>
-                  </li>
-                </ul>
-                <button
-                  type="button"
-                  class="btn btn-outline-info my-2 my-lg-0 btn-sm"
+            <div id="full-carrito">
+              <!-- NAV Carrito LG -->
+              <div class="container-fluid mt-2 d-none d-sm-none d-lg-block">
+                <nav
+                  class="navbar navbar-expand-lg navbar-light carrito-navbar"
                 >
-                  Elejir más cositas
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-outline-danger my-2 my-lg-0 btn-sm"
-                >
-                  Eliminar Carrito
-                </button>
-              </nav>
-            </div>
+                  <a class="navbar-brand"><strong>Carrito</strong></a>
+                  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item border rounded-lg border-dark">
+                      <a class="nav-link">Elejir Colores y Cantidad</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link"
+                        ><i class="fas fa-angle-double-right"></i
+                      ></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link disabled">Confirmar</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link"
+                        ><i class="fas fa-angle-double-right"></i
+                      ></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link disabled">Pagar</a>
+                    </li>
+                  </ul>
+                  <button
+                    type="button"
+                    class="btn btn-outline-info my-2 my-lg-0 btn-sm"
+                  >
+                    Elejir más cositas
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-outline-danger my-2 my-lg-0 btn-sm"
+                  >
+                    Eliminar Carrito
+                  </button>
+                </nav>
+              </div>
 
-            <!-- END - NAV Carrito LG -->
-            <!-- NAV Carrito Small -->
-            <div class="container-fluid mt-2 d-md-block d-lg-none">
-              <nav
-                class="navbar navbar-expand-lg navbar-light carrito-navbar-small"
-              >
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link" style="color: white; margin-top: -35px;"
-                      >Elejir Colores y Cantidad</a
-                    >
-                  </li>
-                </ul>
-                <button
-                  type="button"
-                  class="btn btn-outline-info my-2 my-lg-0 btn-sm"
-                  style="margin-top: -20px;"
+              <!-- END - NAV Carrito LG -->
+              <!-- NAV Carrito Small -->
+              <div class="container-fluid mt-2 d-md-block d-lg-none">
+                <nav
+                  class="navbar navbar-expand-lg navbar-light carrito-navbar-small"
                 >
-                  Elejir más cositas
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-outline-danger my-2 my-lg-0 btn-sm"
-                >
-                  X
-                </button>
-              </nav>
-            </div>
-            <!-- END - NAV Carrito Small -->
-            <!-- DATOS INSERTADOS CARRITO -->
-            <div id="full-cart"></div>
-            <!-- Footer FULL CARRITO -->
-            <div class="container">
-              <div class="row mt-2 d-flex justify-content-end text-center">
-                <div class="col-7">
-                  <button type="button" class="btn btn-outline-info m-1">
-                    Volver atrás
+                  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                      <a
+                        class="nav-link"
+                        style="color: white; margin-top: -35px;"
+                        >Elejir Colores y Cantidad</a
+                      >
+                    </li>
+                  </ul>
+                  <button
+                    type="button"
+                    class="btn btn-outline-info my-2 my-lg-0 btn-sm"
+                    style="margin-top: -20px;"
+                  >
+                    Elejir más cositas
                   </button>
-                  <button type="button" class="btn btn-success btn-lg m-1">
-                    Confirmar Colores y Cantidad
+                  <button
+                    type="button"
+                    class="btn btn-outline-danger my-2 my-lg-0 btn-sm"
+                  >
+                    X
                   </button>
-                </div>
-                <div class="col-4 border border-success rounded m-1 ">
-                  <p><strong id="full-total">Total: $0.00</strong></p>
+                </nav>
+              </div>
+              <!-- END - NAV Carrito Small -->
+              <!-- DATOS INSERTADOS CARRITO -->
+              <div id="full-cart"></div>
+              <!-- Footer FULL CARRITO -->
+              <div class="container">
+                <div class="row mt-2 d-flex justify-content-end text-center">
+                  <div class="col-7">
+                    <button type="button" class="btn btn-outline-info m-1">
+                      Volver atrás
+                    </button>
+                    <button type="button" class="btn btn-success btn-lg m-1">
+                      Confirmar Colores y Cantidad
+                    </button>
+                  </div>
+                  <div class="col-4 border border-success rounded m-1 ">
+                    <p><strong id="full-total">Total: $0.00</strong></p>
+                  </div>
                 </div>
               </div>
+              <!-- END - Footer FULL CARRITO -->
             </div>
-            <!-- END - Footer FULL CARRITO -->
             <!-- END - FULL CARRITO -->
             <!-- LISTA PRODUCTOS -->
             <div class="row" id="productos"></div>

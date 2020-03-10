@@ -1,5 +1,6 @@
 $(document).ready(function() {
   $("#info-extend").hide();
+  $("#full-carrito").hide();
   getProductos();
 });
 
@@ -22,6 +23,15 @@ $(document).on("click", ".img-thumb", function() {
   let url = $(element).attr("src");
   $(element).addClass("border border-success");
   imgPrincipal(url);
+});
+
+// Capturar click ver-carrito
+$(document).on("click", "#ver-carrito", function() {
+  $("#info-extend").hide(1000);
+  $("#productos").hide(1000);
+  getFullCart();
+  $("#full-carrito").show(1000);
+
 });
 
 // --- PINTA LOS PRODUCTOS EN LA PAGINA PRINCIPAL --- //
